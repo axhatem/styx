@@ -2,13 +2,21 @@
 import { Image } from "astro:assets";
 import { withBase } from "../../utils/config-utils";
 const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
+const logoImageUrl = withBase("/images/logo.png");
 ---
 
 <header>
   <div class="header-wrapper">
-    <a href="#home">
-      <img src="path_to_logo.png" alt="Site Logo" />
-    </a>
+    <div class="logo-container">
+      <Image
+        class="Styx Logo"
+        src={logoImageUrl}
+        alt="Arrow"
+        width={20}
+        height={20}
+      />
+      <a href="#">STYX</a>
+    </div>
     <nav>
       <a href="#">A PROPOS</a>
       <a href="#">ARTICLES</a>
@@ -28,6 +36,24 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
 </header>
 
 <style>
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
   .blue-arrow-img {
     width: 1rem;
     height: 1rem;
@@ -38,6 +64,8 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;
   }
 
   header {
@@ -49,9 +77,11 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
     align-items: center;
   }
 
-  nav a {
+  a {
     text-decoration: none;
-    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #07072d;
+    font-weight: 400;
   }
 
   nav a:hover {
