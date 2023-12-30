@@ -1,32 +1,45 @@
 ---
-import Footer from "../components/Footer.astro";
-import LeftContent from "../components/left-section/LeftContent.astro";
-import RightContent from "../components/right-section/RightContent.astro";
+import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-import NavBar from "../components/nav/NavBar.astro";
 ---
 
 <Layout title="Styx" description="Styx">
   <NavBar />
   <div class="main">
-    <div class="content">
-      <LeftContent />
-      <RightContent />
-    </div>
-    <Footer />
+    <section class="hero">
+      <h1>
+        Augmente tes chances de prendre la bonne <span class="decision"
+          >décision.</span
+        >
+      </h1>
+    </section>
   </div>
 </Layout>
 
 <style>
-  .main {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .content {
-    display: flex;
-    gap: 4.5rem;
+  .hero {
+    width: 78%;
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    background: linear-gradient(
+        146deg,
+        rgba(233, 233, 233, 0.2) 23.91%,
+        rgba(0, 0, 0, 0) 80.07%
+      ),
+      #f8f8f9;
+  }
+
+  .hero h1 {
+    font-weight: 500;
+    font-size: 8.4rem;
+    line-height: 10rem; /* 119.048% */
+    letter-spacing: -0.252rem;
+  }
+
+  .decision {
+    font-size: inherit;
+    color: #00e;
+    font-weight: 300;
   }
 </style>
