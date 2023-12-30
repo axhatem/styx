@@ -43,6 +43,10 @@ const { title, description } = Astro.props;
         font-size: 62.5%;
       }
 
+      body {
+        font-size: 1.6rem;
+      }
+
       *,
       *::before,
       *::after {
@@ -51,7 +55,6 @@ const { title, description } = Astro.props;
         box-sizing: border-box;
         list-style: none;
         outline: none;
-        font-size: 1.6rem;
         font-weight: normal;
       }
 
@@ -91,6 +94,13 @@ const { title, description } = Astro.props;
       .md-content h2,
       .md-content h3 {
         padding: 1rem 0rem 0.5rem 0;
+      }
+
+      /* Media query for high-resolution screens */
+      @media screen and (min-width: 2000px) {
+        html {
+          font-size: 78.125%;
+        }
       }
     </style>
   </body>
