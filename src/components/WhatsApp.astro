@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../utils/config-utils.ts";
+const telegramImageUrl = withBase("/images/whatsapp.png");
+---
+
+<div>
+  <Image src={telegramImageUrl} alt="Telegram" width={50} height={50} />
+</div>
+
+<style>
+  img {
+    position: fixed;
+    bottom: 2rem;
+    right: 6rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  img:hover {
+    transform: scale(1.2);
+  }
+
+  @media only screen and (max-width: 768px), (pointer: coarse), (hover: none) {
+    img:hover {
+      transform: scale(1);
+    }
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../../utils/config-utils";
+const checkboldImageUrl = withBase("/images/checkbold.svg");
+---
+
+<div class="checklist-container">
+  <div class="check-item">
+    <Image src={checkboldImageUrl} alt="Checked" width={30} height={30} />
+    <span>Revenus</span>
+  </div>
+  <div class="check-item">
+    <Image src={checkboldImageUrl} alt="Checked" width={30} height={30} />
+    <span>Leads</span>
+  </div>
+  <div class="check-item">
+    <Image src={checkboldImageUrl} alt="Checked" width={30} height={30} />
+    <span>Authorite</span>
+  </div>
+</div>
+
+<style>
+  .checklist-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+
+  .check-item img {
+    width: 1.56rem;
+    height: 1.56rem;
+  }
+
+  .check-item span {
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+    color: #9b0c3e;
+  }
+</style>

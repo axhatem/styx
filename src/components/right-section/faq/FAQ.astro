@@ -1,0 +1,152 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../../utils/config-utils";
+const twitterXImageUrl = withBase("/images/twitter-X.svg");
+const openImageUrl = withBase("/images/right-pointing-arrow.svg");
+const closedImageUrl = withBase("/images/down-pointing-arrow.svg");
+const faqItems = await Astro.glob("../../../content/faq/*.md");
+
+console.log(faqItems.length);
+---
+
+<script>
+  const ENABLE_MULTIPLE_COLLAPSE = false;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement; // Type assertion here
+
+      if (target.tagName === "SUMMARY" && !ENABLE_MULTIPLE_COLLAPSE) {
+        document.querySelectorAll("details[open]").forEach((detail) => {
+          if (detail !== target.parentNode) {
+            // Now we can safely access parentNode
+            detail.removeAttribute("open");
+          }
+        });
+      }
+    });
+  });
+</script>
+
+<div class="faq">
+  <p class="alert-title">ALERTE !</p>
+  <p class="alert-subtitle">
+    Ne fais&nbsp;<span class="underline">pas appel à moi</span>&nbsp;avant
+    d'être prêt
+
+    <Image
+      src={twitterXImageUrl}
+      alt="Twitter-X"
+      width={20}
+      height={20}
+      class="twitter-x-faq"
+    />
+  </p>
+  <div
+    class="accordion"
+    style={`--openImageUrl: url(${openImageUrl});--closedImageUrl: url(${closedImageUrl})`}
+  >
+    {
+      faqItems.map((faqItem) => (
+        <details class="md-content">
+          <summary>{faqItem.frontmatter.question}</summary>
+          <div set:html={faqItem.compiledContent()} />
+        </details>
+      ))
+    }
+  </div>
+
+  <style>
+    .faq {
+      margin-top: 1rem;
+      width: 40rem;
+      padding: 1.5rem;
+      color: white;
+      background-color: black;
+      box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .twitter-x-faq {
+      width: 1rem;
+      height: 1rem;
+      position: relative;
+      top: 0.15rem;
+      left: 0.1rem;
+    }
+
+    .alert-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .alert-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #999;
+    }
+
+    .accordion {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .accordion details:hover {
+      opacity: 0.8;
+    }
+
+    .accordion details[open]:hover {
+      opacity: 1;
+    }
+
+    .accordion details {
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 1rem;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .accordion summary {
+      color: white;
+      cursor: pointer;
+    }
+
+    .accordion div {
+      margin: 1.25rem 1rem;
+    }
+
+    .accordion summary {
+      list-style: none; /* Hide default marker */
+      cursor: pointer;
+      position: relative; /* Needed for absolute positioning of pseudo-element */
+    }
+
+    .accordion summary::before {
+      content: ""; /* Needed for pseudo-element to show */
+      position: absolute; /* Position it relative to summary */
+      right: 1rem;
+      top: 0;
+      background-image: var(--openImageUrl); /* Default icon */
+      background-size: cover;
+      width: 20px; /* Adjust size as needed */
+      height: 20px; /* Adjust size as needed */
+    }
+
+    .accordion details[open] summary::before {
+      background-image: var(--closedImageUrl);
+    }
+  </style>
+</div>

@@ -1,0 +1,43 @@
+---
+import FreeConsultationItem from "./FreeConsultationItem.astro";
+---
+
+<div class="free-consultation">
+  <h3>20MIN-CONSULTATION <span>(offert)</span></h3>
+  <div class="free-consultation-items">
+    <FreeConsultationItem>
+      <p>Bénéficie d'une vitrine à ton image pour ton business</p>
+    </FreeConsultationItem>
+    <FreeConsultationItem>
+      <p>Augmente ton taux de conversion sans publicité payante</p>
+    </FreeConsultationItem>
+    <FreeConsultationItem>
+      <p>Maximise l'impact de ta valeur perçue (Branding)</p>
+    </FreeConsultationItem>
+    <FreeConsultationItem>
+      <p>Génère des leads directement depuis ton profil X</p>
+    </FreeConsultationItem>
+    <FreeConsultationItem>
+      <p>Reçois des clients loyaux sans t'embêter avec le marketing</p>
+    </FreeConsultationItem>
+  </div>
+</div>
+
+<style>
+  .free-consultation {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    border: 1px solid #717070;
+    padding: 0.75rem;
+    width: fit-content;
+  }
+
+  h3 {
+    padding-left: 30px;
+  }
+
+  .free-consultation-items {
+    margin-top: 10px;
+  }
+</style>

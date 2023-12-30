@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import { withBase } from "../../../utils/config-utils.ts";
+const checkboxImageUrl = withBase('/images/checkbox.png');
+---
+
+<div>
+  <Image
+    src={checkboxImageUrl}
+    alt="Checked"
+    width={30}
+    height={30}
+  />
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+  }
+</style>

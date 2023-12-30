@@ -1,0 +1,24 @@
+---
+import AuditLandingPage from "./AuditLandingPage.astro";
+import CTA from "./CTA.astro";
+import MainTitle from "./MainTitle.astro";
+import SubTitle from "./SubTitle.astro";
+---
+
+<section class="left-content">
+  <MainTitle />
+  <SubTitle />
+  <AuditLandingPage />
+  <CTA />
+</section>
+
+<style>
+  .left-content {
+    margin-top: 13rem;
+    margin-left: 16rem;
+    width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+</style>

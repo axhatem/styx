@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../utils/config-utils";
+const checkboldImageUrl = withBase("/images/right-arrow.svg");
+---
+
+<div class="main-title">
+  <h1>J'AUTOPSIE&nbsp;&nbsp;TA<br /> LANDING&nbsp;&nbsp;PAGE</h1>
+  <Image src={checkboldImageUrl} alt="Checked" width={90} height={90} />
+</div>
+
+<style>
+  .main-title {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    color: black;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 7.5rem;
+    letter-spacing: -0.64rem;
+  }
+</style>

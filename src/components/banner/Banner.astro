@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../utils/config-utils.ts";
+import { bannerBackgroundColor, redColor } from "../../style/colors.ts";
+const rightArrowSquareImageUrl = withBase("/images/right-arrow-square.svg");
+---
+
+<section class="banner">
+  <p class="banner-text">
+    <div class="lp-working">
+      <div>
+        <Image
+          src={rightArrowSquareImageUrl}
+          alt="Warning!"
+          class="right-arrow-icon"
+          width={50}
+          height={50}
+        />
+      </div>
+      <div class="lp-working-text-container">
+        <span class="underline">Tu as déjà une Landing Page qui tourne ?</span>
+      </div>
+    </div>
+    <p class="free-audit">Je te fais un AUDIT (gratuit pour l'instant)</p>
+  </p>
+</section>
+
+<style define:vars={{ bannerBackgroundColor, redColor }}>
+  .lp-working-text-container {
+    margin-bottom: 0.5rem;
+  }
+
+  .lp-working {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .banner {
+    z-index: 1;
+    position: fixed;
+    gap: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    box-shadow: 0 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.05);
+  }
+
+  .banner-text {
+    align-items: center;
+    padding-bottom: 0.2rem;
+  }
+
+  .right-arrow-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .free-audit {
+    color: #9b0c3e;
+    margin-bottom: 0.5rem;
+  }
+</style>

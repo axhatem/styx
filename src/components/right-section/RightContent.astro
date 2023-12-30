@@ -1,0 +1,70 @@
+---
+import ReviewCard from "./ReviewCard.astro";
+---
+
+<section class="right-section">
+  <div class="video"></div>
+  <div class="grid-container">
+    <div class="grid-item">
+      <ReviewCard
+        title="Carmen De Villepin"
+        description="Travailler avec cette équipe a été un véritable tournant pour notre entreprise. <br>Leur souci du détail et leur approche innovante ont considérablement augmenté notre productivité et notre présence sur le marché.<br>Je recommande vivement leurs services à toute entreprise tournée vers l'avenir !"
+      />
+    </div>
+    <div class="grid-item">
+      <ReviewCard
+        title="Raphaël Jacquet"
+        description="J'ai été véritablement émerveillé par le niveau de créativité et de dévouement manifesté pour donner vie à mon projet.<br>Le résultat final n'était pas seulement satisfaisant, mais il a dépassé toutes mes attentes.<br>Un grand merci du fond du cœur à toute l'équipe pour leur travail exceptionnel."
+      />
+    </div>
+    <div class="grid-item">
+      <ReviewCard
+        title="Perrine Cochet"
+        description="En tant qu'éducateur, j'ai vu de nombreux services apparaître et disparaître, mais celui-ci se démarque. Il a énormément contribué à impliquer les étudiants et à enrichir leur expérience d'apprentissage.<br> Une ressource de premier ordre que je recommanderais volontiers à mes collègues."
+      />
+    </div>
+    <div class="grid-item">
+      <ReviewCard
+        title="Maximilien Battier"
+        description="Dans nos efforts pour promouvoir la durabilité, nous avons trouvé un partenaire qui comprend non seulement notre vision mais y apporte aussi une immense valeur.<br> Leur engagement en faveur de pratiques écologiques et de solutions innovantes a joué un rôle clé dans le succès de notre campagne."
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .video {
+    width: 60rem;
+    height: 35.2rem;
+    border: 0.1rem solid #d9d9d9;
+    background-color: #d9d9d9;
+  }
+
+  .right-section {
+    margin-top: 10rem;
+    margin-bottom: 13rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    grid-template-rows: 1fr 1fr; /* 2 rows */
+    gap: 1.6rem;
+  }
+
+  .grid-item {
+    margin-top: 1.6rem;
+  }
+
+  /* Position items in the 1st and 3rd columns to mimic space-between */
+  .grid-container > .grid-item:nth-child(odd) {
+    grid-column: 1;
+  }
+
+  .grid-container > .grid-item:nth-child(even) {
+    grid-column: 3;
+  }
+</style>

@@ -1,0 +1,9 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../utils/config-utils.ts";
+const starImageUrl = withBase("/images/star.svg");
+---
+
+<div class="star-rating">
+  <Image src={starImageUrl} alt={"Star"} width={11} height={11} />
+</div>
