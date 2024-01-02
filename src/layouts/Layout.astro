@@ -96,6 +96,21 @@ const { title, description } = Astro.props;
         padding: 1rem 0rem 0.5rem 0;
       }
 
+      ::-webkit-input-placeholder,
+      :-moz-placeholder,
+      ::-moz-placeholder,
+      :-ms-input-placeholder,
+      ::-ms-input-placeholder,
+      ::placeholder {
+        /* WebKit, Blink, Edge */
+        color: #666;
+      }
+
+      ::placeholder {
+        /* Internet Explorer 10-11 */
+        color: #666;
+      }
+
       /* Media query for high-resolution screens */
       @media screen and (min-width: 2000px) {
         html {
