@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { withBase } from "../utils/config-utils";
 const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
+const rightChevronImageUrl = withBase("/images/right-chevron.svg");
 ---
 
 <Layout title="Styx" description="Styx">
@@ -34,10 +35,19 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
           <input placeholder="Inscris ton adresse mail..." />
         </div>
         <div class="cta-submit">
-          <button>Je décide</button>
+          <button>
+            Je décide<Image
+              src={rightChevronImageUrl}
+              alt="-->"
+              width={20}
+              height={20}
+            />
+          </button>
         </div>
       </div>
     </section>
+
+    <section class="testimonials"></section>
   </div>
 </Layout>
 
@@ -47,7 +57,7 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
     width: 29rem;
     padding-left: 1rem;
     border-radius: 1rem;
-    border: solid 1px grey;
+    border: solid 0.1rem grey;
   }
 
   .arrow-delimiter {
@@ -70,6 +80,10 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
   }
 
   .cta-submit button {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
     border: 0;
     padding: 0;
     background: #00e;
@@ -80,6 +94,10 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
     border-radius: 1rem;
     cursor: pointer;
     box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .cta-submit button:hover {
+    background: #0000eecc;
   }
 
   .cta-business {
@@ -117,11 +135,14 @@ const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
     background: #00e;
   }
 
-  .hero {
+  .testimonials {
     width: 75%;
+  }
+
+  .hero {
+    padding-left: 22rem;
     margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding-bottom: 5rem;
     background: linear-gradient(
         146deg,
         rgba(233, 233, 233, 0.2) 23.91%,
