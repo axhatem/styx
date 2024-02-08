@@ -4,7 +4,6 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     if (!email) {
       alert("Please enter an email address.");
       return;
@@ -20,31 +19,30 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
       });
 
       if (response.ok) {
-        alert("Subscription successful!");
+        alert("Merci !");
       } else {
-        alert("Subscription failed. Please try again.");
+        console.error("Error submitting form:", error);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again.");
     }
   };
 
   return (
-    <form class="cta" onSubmit={handleSubmit}>
-      <div class="cta-business">
-        <p class="cta-business-title">ELEVE TON BUSINESS</p>
-        <p class="cta-business-description">Tous les Dimanche, on provoque la chance de prendre la décision juste.</p>
+    <form className={"cta"}>
+      <div className={"cta-business"}>
+        <p className={"cta-business-title"}>ELEVE TON BUSINESS</p>
+        <p className={"cta-business-description"}>Tous les Dimanche, on provoque la chance de prendre la décision juste.</p>
       </div>
-      <div class="arrow-delimiter">
+      <div className="arrow-delimiter">
         <img src={blueArrowImageUrl} alt="-->" width={50} height={50} />
       </div>
-      <div class="cta-start">
-        <p class="cta-business-title">COMMENCE ICI</p>
+      <div className={"cta-start"}>
+        <p className={"cta-business-title"}>COMMENCE ICI</p>
         <input name="email_address" aria-label="E-mail" placeholder="Inscris ton adresse mail..." onChange={(e) => setEmail(e.target.value)} />
       </div>
-      <div class="cta-submit">
-        <button type="submit">
+      <div className={"cta-submit"}>
+        <button type="submit" onClick={handleSubmit}>
           Je décide
           <img src={rightChevronImageUrl} alt="-->" width={20} height={20} />
         </button>
