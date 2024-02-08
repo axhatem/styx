@@ -7,7 +7,7 @@ const rightChevronImageUrl = withBase("/images/right-chevron.svg");
 import SubscribeButton from "../components/SubscribeButton.jsx"; 
 ---
 
-<Layout title="Styx" description="Styx">
+<Layout title="Styx" description="Styx" >
   <NavBar />
   <div class="main">
     <section class="hero">
@@ -26,6 +26,16 @@ import SubscribeButton from "../components/SubscribeButton.jsx";
 </Layout>
 
 <style>   
+
+body{
+  background: linear-gradient(146deg,rgba(233,233,233,0.2) 23.91%,rgba(0,0,0,0) 80.07%),#f8f8f9;
+}
+
+.main{
+  width: 70%;
+  max-width: 1000px;
+  margin: auto;
+}
   .hero-title {
     position: relative;
     display: flex;
@@ -47,9 +57,7 @@ import SubscribeButton from "../components/SubscribeButton.jsx";
   }
 
   .hero {
-    padding-left: 22rem;
     margin-top: 5rem;
-    padding-bottom: 3rem;
     background: linear-gradient(
         146deg,
         rgba(233, 233, 233, 0.2) 23.91%,

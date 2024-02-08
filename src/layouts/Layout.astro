@@ -172,6 +172,45 @@ const { title, description } = Astro.props;
         border: solid 0.1rem grey;
       }
 
+      .btn, .btn:link, .btn:visited {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  position: relative;
+  cursor: pointer; }
+
+  .btn::after {
+    background-color: #00e;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
+
+.btn:hover {
+  -webkit-transform: translateY(-.1rem);
+          transform: translateY(-.1rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+
+    .btn:hover::after {
+    -webkit-transform: scaleX(1.2) scaleY(1.4);
+            transform: scaleX(1.2) scaleY(1.4);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  outline: none;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
       /* Media query for high-resolution screens */
       @media screen and (min-width: 2000px) {
         html {
