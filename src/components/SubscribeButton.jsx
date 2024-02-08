@@ -20,6 +20,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
 
       if (response.ok) {
         alert("Merci !");
+        setEmail("");
       } else {
         console.error("Error submitting form:", error);
       }
@@ -39,7 +40,13 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
       </div>
       <div className={"cta-start"}>
         <p className={"cta-business-title"}>COMMENCE ICI</p>
-        <input name="email_address" aria-label="E-mail" placeholder="Inscris ton adresse mail..." onChange={(e) => setEmail(e.target.value)} />
+        <input
+          name="email_address"
+          aria-label="E-mail"
+          placeholder="Inscris ton adresse mail..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
       <div className={"cta-submit"}>
         <button type="submit" onClick={handleSubmit}>
