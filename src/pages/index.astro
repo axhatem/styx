@@ -1,10 +1,10 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { withBase } from "../utils/config-utils";
 const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
 const rightChevronImageUrl = withBase("/images/right-chevron.svg");
+import SubscribeButton from "../components/SubscribeButton.jsx"; 
 ---
 
 <Layout title="Styx" description="Styx">
@@ -19,106 +19,13 @@ const rightChevronImageUrl = withBase("/images/right-chevron.svg");
           ></span
         >
       </div>
-      <div class="cta">
-        <div class="cta-business">
-          <p class="cta-business-title">ELEVE TON BUSINESS</p>
-          <p class="cta-business-description">
-            Tous les Dimanche, on provoque la chance de prendre la décision
-            juste.
-          </p>
-        </div>
-        <div class="arrow-delimiter">
-          <Image src={blueArrowImageUrl} alt="-->" width={50} height={50} />
-        </div>
-        <div class="cta-start">
-          <p class="cta-business-title">COMMENCE ICI</p>
-          <input placeholder="Inscris ton adresse mail..." />
-        </div>
-        <div class="cta-submit">
-          <button>
-            Je décide<Image
-              src={rightChevronImageUrl}
-              alt="-->"
-              width={20}
-              height={20}
-            />
-          </button>
-        </div>
-      </div>
+      <SubscribeButton client:load rightChevronImageUrl={rightChevronImageUrl} blueArrowImageUrl={blueArrowImageUrl}/>
     </section>
-
     <section class="testimonials"></section>
   </div>
 </Layout>
 
-<style>
-  input {
-    height: 4rem;
-    width: 29rem;
-    padding-left: 1rem;
-    border-radius: 1rem;
-    border: solid 0.1rem grey;
-  }
-
-  .arrow-delimiter {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-  }
-
-  .cta {
-    margin-top: 7rem;
-    display: flex;
-    gap: 2rem;
-  }
-
-  .cta-submit {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3.4rem;
-    height: 4rem;
-  }
-
-  .cta-submit button {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    border: 0;
-    padding: 0;
-    background: #00e;
-    color: #fff;
-    text-align: center;
-    height: 4rem;
-    width: 15rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
-  }
-
-  .cta-submit button:hover {
-    background: #0000eecc;
-  }
-
-  .cta-business {
-    max-width: 29rem;
-    gap: 0.75rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cta-start {
-    display: flex;
-    gap: 0.75rem;
-    flex-direction: column;
-  }
-
-  .cta-business-title {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
+<style>   
   .hero-title {
     position: relative;
     display: flex;
@@ -142,7 +49,7 @@ const rightChevronImageUrl = withBase("/images/right-chevron.svg");
   .hero {
     padding-left: 22rem;
     margin-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
     background: linear-gradient(
         146deg,
         rgba(233, 233, 233, 0.2) 23.91%,
