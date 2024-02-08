@@ -29,7 +29,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
   };
 
   return (
-    <form className={"cta"}>
+    <div className={"cta"}>
       <div className={"cta-business"}>
         <p className={"cta-business-title"}>ELEVE TON BUSINESS</p>
         <p className={"cta-business-description"}>Tous les Dimanche, on provoque la chance de prendre la décision juste.</p>
@@ -47,7 +47,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
           <img src={rightChevronImageUrl} alt="-->" width={20} height={20} />
         </button>
       </div>
-    </form>
+    </div>
   );
 };
 
