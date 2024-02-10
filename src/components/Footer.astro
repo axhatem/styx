@@ -1,43 +1,51 @@
 ---
 import { withBase } from "../utils/config-utils.ts";
+const cguUrl = withBase("/cgu");
+const confidentialyUrl = withBase("/confidentialite");
 const legalMentionsPageUrl = withBase("/mentions-legales");
+const contactUsPageUrl = withBase("/nous-contacter");
+
 ---
 <footer>
   <section class="footer">
     <span class="foolter-logo">© styx 2024</span>
     <span class="footer-pages">
-      <span class="footer-text">Tous droits réservés</span>
-      <a class="footer-text" href={legalMentionsPageUrl}>Mentions Légales</a>
-      <span class="footer-text">Site réalisé par Landing-X</span>
+      <a class="footer-text" href={cguUrl}>CGU</a>
+      <a class="footer-text" href={confidentialyUrl}>Confidentialité</a>
+      <a class="footer-text" href={legalMentionsPageUrl}>Mentions légales</a>
+      <a class="footer-text" href={contactUsPageUrl}>Nous Contacter</a>
+      <span>Réalisé par LANDING-X</span>
     </span>
   </section>
 </footer>
 
 
 <style>
-   .footer {
-    margin-left: 15%;
-    gap: 84rem;
-    display: flex;
-  }
-
   footer {
-    height: 5rem;
     background: #eee;
     border-top: 2px solid #07072D;
-    display: flex;
-    align-items: center;
     width: 100%;
   }
 
-  a {
-    text-decoration: none;
+   .footer {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30rem;
+    height: 5rem;
+    align-items: center;
   }
 
-  .footer-text {
+  .footer-pages {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  a.footer-text {
+    color: black;
     text-align: center;
+    text-decoration: none;
     letter-spacing: 0.036rem;
-    color: white;
     font-size: 1.2rem;
   }
 </style>
