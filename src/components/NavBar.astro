@@ -6,9 +6,8 @@ const logoImageUrl = withBase("/images/logo.svg");
 ---
 
 <header>
-  <div class="header-wrapper">
+  <section class="header">
     <div class="logo-container">
-      
       <a href="#"><Image
         class="Styx Logo"
         src={logoImageUrl}
@@ -29,7 +28,7 @@ const logoImageUrl = withBase("/images/logo.svg");
          LA LISTE PRIVEE</a
       >
     </nav>
-  </div>
+  </section>
 </header>
 
 <style>
@@ -57,7 +56,7 @@ const logoImageUrl = withBase("/images/logo.svg");
     height: 1rem;
   }
 
-  .header-wrapper {
+  .header {
     margin-left: 15%;
     gap: 84rem;
     display: flex;
@@ -66,7 +65,7 @@ const logoImageUrl = withBase("/images/logo.svg");
   header {
     height: 5rem;
     background: #fcfcfc;
-    box-shadow: 0px 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.25);
+    border-bottom: 2px solid #d8d8d8e8;
     display: flex;
     align-items: center;
     width: 100%;
@@ -80,6 +79,6 @@ const logoImageUrl = withBase("/images/logo.svg");
   }
 
   nav a:hover {
-    color: #ddd;
+    color: black;
   }
 </style>

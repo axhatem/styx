@@ -51,7 +51,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
       </div>
       <div className={"cta-submit"}>
         <button className={"btn"} type="submit" onClick={handleSubmit}>
-          Je décide
+          Je découvre
           <img src={rightChevronImageUrl} alt="-->" width={20} height={20} />
         </button>
       </div>

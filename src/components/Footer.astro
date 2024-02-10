@@ -2,21 +2,32 @@
 import { withBase } from "../utils/config-utils.ts";
 const legalMentionsPageUrl = withBase("/mentions-legales");
 ---
+<footer>
+  <section class="footer">
+    <span class="foolter-logo">© styx 2024</span>
+    <span class="footer-pages">
+      <span class="footer-text">Tous droits réservés</span>
+      <a class="footer-text" href={legalMentionsPageUrl}>Mentions Légales</a>
+      <span class="footer-text">Site réalisé par Landing-X</span>
+    </span>
+  </section>
+</footer>
 
-<section class="footer">
-  <span class="footer-text">Tous droits réservés</span>
-  <a class="footer-text" href={legalMentionsPageUrl}>Mentions Légales</a>
-  <span class="footer-text">Site réalisé par Landing-X</span>
-</section>
 
 <style>
-  .footer {
+   .footer {
+    margin-left: 15%;
+    gap: 84rem;
     display: flex;
-    justify-content: space-evenly;
+  }
+
+  footer {
+    height: 5rem;
+    background: #eee;
+    border-top: 2px solid #07072D;
+    display: flex;
     align-items: center;
-    background-color: black;
-    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.05);
-    height: 4.8rem;
+    width: 100%;
   }
 
   a {
