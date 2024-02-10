@@ -34,7 +34,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
     <div className={"cta"}>
       <div className={"cta-business"}>
         <p className={"cta-business-title"}>TU VEUX NOUS REJOINDRE ?</p>
-        <p className={"cta-business-description"}>Tous les Dimanche, on provoque la chance de prendre la décision juste.</p>
+        <p className={"cta-business-description"}>Tous les Dimanche, on navigue dans l'incertitude pour apprendre à Discerner & Décider.</p>
       </div>
       <div className="arrow-delimiter">
         <img src={blueArrowImageUrl} alt="-->" width={50} height={50} />
