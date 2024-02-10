@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
+  const CONVERTKIT_FORM_IF = 6188862;
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e) => {
@@ -10,7 +11,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
     }
 
     try {
-      const response = await fetch("https://app.convertkit.com/forms/5943000/subscriptions", {
+      const response = await fetch(`https://app.convertkit.com/forms/${CONVERTKIT_FORM_IF}/subscriptions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -32,7 +33,7 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
   return (
     <div className={"cta"}>
       <div className={"cta-business"}>
-        <p className={"cta-business-title"}>ELEVE TON BUSINESS</p>
+        <p className={"cta-business-title"}>TU VEUX NOUS REJOINDRE ?</p>
         <p className={"cta-business-description"}>Tous les Dimanche, on provoque la chance de prendre la décision juste.</p>
       </div>
       <div className="arrow-delimiter">
