@@ -1,8 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import { withBase } from "../utils/config-utils";
-const blueArrowImageUrl = withBase("/images/blue-arrow.svg");
+function removeTrailingSlash(str: string): string {
+  return str.endsWith("/") ? str.slice(0, -1) : str;
+}
+const pathname = removeTrailingSlash(Astro.url.pathname)
+  .split("/")
+  .slice(-1)[0];
+const about = withBase("/a-propos");
+const articles = withBase("/articles");
+const newsletter = withBase("/newsletter");
 const logoImageUrl = withBase("/images/logo.svg");
+console.log(pathname);
 ---
 
 <header>
@@ -17,16 +26,9 @@ const logoImageUrl = withBase("/images/logo.svg");
       /></a>
     </div>
     <nav>
-      <a href="/"
-        ><Image
-          class="blue-arrow-img"
-          src={blueArrowImageUrl}
-          alt="Arrow"
-          width={20}
-          height={20}
-        />
-         LA LISTE PRIVEE</a
-      >
+      <a href={about} class={pathname === "a-propos" ? "active" : ""}>A propos</span>
+      <a href={articles} class={pathname === "articles" ? "active" : ""}>Articles</span>
+      <a href={newsletter} class={pathname === "newsletter" ? "active" : ""}>Newsletter</span>
     </nav>
   </section>
 </header>
@@ -43,9 +45,22 @@ const logoImageUrl = withBase("/images/logo.svg");
   nav {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 7rem;
     font-size: 1.2rem;
   }
+
+  nav a {
+    min-width: 5rem;
+  }
+
+  nav a.active {
+    color: #00e;
+  }
+
+  nav:hover a.active {
+    color: #00e;
+  }
+
 
   p {
     font-size: 1.2rem;
@@ -60,6 +75,7 @@ const logoImageUrl = withBase("/images/logo.svg");
     margin-left: 15%;
     gap: 84rem;
     display: flex;
+    overflow: hidden;
   }
 
   header {

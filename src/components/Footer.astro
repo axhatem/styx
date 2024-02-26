@@ -1,5 +1,11 @@
 ---
 import { withBase } from "../utils/config-utils.ts";
+function removeTrailingSlash(str: string): string {
+  return str.endsWith("/") ? str.slice(0, -1) : str;
+}
+const pathname = removeTrailingSlash(Astro.url.pathname)
+  .split("/")
+  .slice(-1)[0];
 const legalMentionsPageUrl = withBase("/mentions-legales");
 const contactUsPageUrl = withBase("/contact");
 
@@ -8,8 +14,8 @@ const contactUsPageUrl = withBase("/contact");
   <section class="footer">
     <span class="foolter-logo">© styx 2024</span>
     <span class="footer-pages">
-      <a class="footer-text" href={legalMentionsPageUrl}>Mentions légales</a>
-      <a class="footer-text" href={contactUsPageUrl}>Contact</a>
+      <a href={legalMentionsPageUrl} class={pathname === "mentions-legales" ? "footer-text active" : "footer-text"}>Mentions légales</a>
+      <a href={contactUsPageUrl} class={pathname === "contact" ? "footer-text active" : "footer-text"}>Contact</a>
       <span class="footer-landing-x">Réalisé par LANDING-X</span>
     </span>
   </section>
@@ -21,6 +27,23 @@ const contactUsPageUrl = withBase("/contact");
   .footer-landing-x{
     color: #9B0C3E;
   }
+
+  a.footer-text {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.036rem;
+    font-size: 1.2rem;
+  }
+
+  a.active {
+    color: #00e;
+  }
+
+  a.active:hover {
+    color: #00e;
+  }
+
 
   footer {
     background: #eee;
@@ -42,11 +65,5 @@ const contactUsPageUrl = withBase("/contact");
     gap: 1.5rem;
   }
 
-  a.footer-text {
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 0.036rem;
-    font-size: 1.2rem;
-  }
+  
 </style>
