@@ -112,7 +112,7 @@ const { title, description } = Astro.props;
       }
 
       .cta-business {
-        max-width: 35rem;
+        max-width: 52rem;
       }
 
       .cta {
@@ -139,10 +139,11 @@ const { title, description } = Astro.props;
         background: #00e;
         color: #fff;
         text-align: center;
-        height: 4rem;
+        height: 5rem;
         width: 15rem;
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 3rem;
       }
 
       .cta-submit button:hover {
@@ -155,8 +156,6 @@ const { title, description } = Astro.props;
         margin-top: 3.5rem;
       }
 
-      
-
       .cta-business-title {
         color: #000;
         font-size: 2.4rem;
@@ -166,55 +165,63 @@ const { title, description } = Astro.props;
       .cta-start input {
         height: 4rem;
         width: 29rem;
+        font-size: 1.1rem;
         padding-left: 1rem;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
         border: solid 0.1rem grey;
+        border-radius: 1rem;
       }
 
       .btn, .btn:link, .btn:visited {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  position: relative;
-  cursor: pointer; }
+        -webkit-transition: all .2s;
+        transition: all .2s;
+        position: relative;
+        cursor: pointer; 
+      }
 
-  .btn::after {
-    background-color: #00e;
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    -webkit-transition: all .5s;
-    transition: all .5s; }
+    .btn::after {
+      background-color: #00e;
+      content: "";
+      border-radius: 3rem;
 
-.btn:hover {
-  -webkit-transform: translateY(-.1rem);
-          transform: translateY(-.1rem);
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      -webkit-transition: all .5s;
+      transition: all .5s; 
+    }
+
+    .btn:hover {
+      -webkit-transform: translateY(-.1rem);
+              transform: translateY(-.1rem);
+      -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+              box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); 
+    }
 
 
     .btn:hover::after {
-    -webkit-transform: scaleX(1.2) scaleY(1.4);
-            transform: scaleX(1.2) scaleY(1.4);
-    opacity: 0; }
+      -webkit-transform: scaleX(1.2) scaleY(1.4);
+              transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0;
+     }
 
-.btn:active, .btn:focus {
-  outline: none;
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+    .btn:active, .btn:focus {
+      outline: none;
+      -webkit-transform: translateY(-1px);
+              transform: translateY(-1px);
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-      /* Media query for high-resolution screens */
+          /* Media query for high-resolution screens */
       @media screen and (min-width: 2000px) {
         html {
           font-size: 78.125%;
-        }
       }
+    }
 
     </style>
   </body>

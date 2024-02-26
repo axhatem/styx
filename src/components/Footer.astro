@@ -1,26 +1,27 @@
 ---
 import { withBase } from "../utils/config-utils.ts";
-const cguUrl = withBase("/cgu");
-const confidentialyUrl = withBase("/confidentialite");
 const legalMentionsPageUrl = withBase("/mentions-legales");
-const contactUsPageUrl = withBase("/nous-contacter");
+const contactUsPageUrl = withBase("/contact");
 
 ---
 <footer>
   <section class="footer">
     <span class="foolter-logo">© styx 2024</span>
     <span class="footer-pages">
-      <a class="footer-text" href={cguUrl}>CGU</a>
-      <a class="footer-text" href={confidentialyUrl}>Confidentialité</a>
       <a class="footer-text" href={legalMentionsPageUrl}>Mentions légales</a>
-      <a class="footer-text" href={contactUsPageUrl}>Nous Contacter</a>
-      <span>Réalisé par LANDING-X</span>
+      <a class="footer-text" href={contactUsPageUrl}>Contact</a>
+      <span class="footer-landing-x">Réalisé par LANDING-X</span>
     </span>
   </section>
 </footer>
 
 
 <style>
+
+  .footer-landing-x{
+    color: #9B0C3E;
+  }
+
   footer {
     background: #eee;
     border-top: 2px solid #07072D;
