@@ -11,7 +11,10 @@ const SubscribeButton = ({ rightChevronImageUrl, blueArrowImageUrl }) => {
     }
 
     try {
-      const response = await fetch(`https://app.convertkit.com/forms/${CONVERTKIT_FORM_IF}/subscriptions`, {
+      const urlAction = "https://assets.mailerlite.com/jsonp/825554/forms/114203514307085610/subscribe";
+      const urlKey = encodeURIComponent(`fields[email]`);
+      const urlVal = encodeURIComponent(email);
+      const response = await fetch(`${urlAction}?${urlKey}=${urlVal}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
